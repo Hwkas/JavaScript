@@ -1,0 +1,16 @@
+{
+  "name": "qr-code-generator",
+  "version": "1.0.0",
+  "description": "This program generated QR code in png format",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "amaansaifi999@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^9.2.6",
+    "qr-image": "^3.2.0"
+  }
+}
