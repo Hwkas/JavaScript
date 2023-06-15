@@ -3,13 +3,21 @@ import React, { useState } from "react";
 function ToDoItems(props) {
   const [isDone, setisDone] = useState(false);
 
-  function handleClick() {
-    setisDone((prevStyle) => {
-      return !prevStyle;
-    });
+  function handleMouseOver() {
+    setisDone(true);
   }
+  function handleMouseOut() {
+    setisDone(false);
+  }
+
+  function handleClick() {
+    props.Onchecked(props.id);
+  }
+
   return (
     <li
+      onMouseOver={handleMouseOver}
+      onMouseOut={handleMouseOut}
       onClick={handleClick}
       style={{ textDecoration: isDone && "line-through" }}
     >
@@ -18,8 +26,10 @@ function ToDoItems(props) {
   );
 }
 
-function createToDoItems(item, index) {
-  return <ToDoItems key={index} item={item} />;
+function createToDoItems(item, index, deleteItem) {
+  return (
+    <ToDoItems key={index} id={index} item={item} Onchecked={deleteItem} />
+  );
 }
 
 export default ToDoItems;
