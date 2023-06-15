@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { createNotes } from "./components/Notes";
+import { createToDoItems } from "./components/ToDoItems";
 
 function App() {
   const [inputText, setInputText] = useState("");
@@ -29,7 +29,7 @@ function App() {
         </button>
       </div>
       <div>
-        <ul>{items.map(createNotes)}</ul>
+        <ul>{items.map((item, index) => createToDoItems(item, index))}</ul>
       </div>
     </div>
   );
